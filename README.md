@@ -60,6 +60,14 @@ e.g. "John Smith" → "Smith, John"
 replace_strings.py "(\w+) (\w+)" "\2, \1" mytext.txt
 ```
 
+#### Reformat ISO dates
+
+e.g. "2026-03-06" → "06.03.2026".
+
+```bash
+replace_strings.py "(?P<y>\d{4})-(?P<m>\d{2})-(?P<d>\d{2})" "\g<d>.\g<m>.\g<y>" mytext.txt
+```
+
 ## Installation
 
 No installation required. Requires Python 3.7+.
