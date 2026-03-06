@@ -2,17 +2,6 @@
 # replace_strings.py
 """
 Replaces all occurrences of a regex pattern with a string in a text file.
-
-Examples:
-
-# Replace one or more digits with #
-replace_strings.py "\d+" "#" mytext.txt
-
-# Swap first and last name (e.g. "John Smith" → "Smith, John")
-replace_strings.py "(\w+) (\w+)" "\2, \1" mytext.txt
-
-# Remove lines that contain only whitespace (multiline not needed for this)
-replace_strings.py "(?m)^\s+$" "" mytext.txt
 """
 import sys
 import re
