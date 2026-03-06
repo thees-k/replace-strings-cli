@@ -4,7 +4,7 @@ A simple command-line tool to perform regex-based string replacements in text fi
 
 I needed it for programming.
 
-Mainly written by **Claude Sonnet 4.6**.
+Mainly implemented by **Claude Sonnet 4.6**.
 
 ## Features
 
@@ -25,11 +25,14 @@ python replace_strings.py [-t] "search pattern" "replacement string" textfile
 
 ### Examples
 
+Many examples can be found in [test_replace_strings.py](test_replace_strings.py).
+
 #### Simple replacement without using regex
 
 ```bash
 replace_strings.py "Hello" "Hi" mytext.txt
 ```
+Note that "hello" would not be replaced. The script works **case sensitive**.
 
 #### Preview changes without modifying the file
 
@@ -49,7 +52,13 @@ replace_strings.py "\d+" "#" mytext.txt
 replace_strings.py "(?m)^\s+$" "" mytext.txt
 ```
 
-→ For more examples see [test_replace_strings.py](test_replace_strings.py).
+#### Swap first two words of each line and add comma
+
+e.g. "John Smith" → "Smith, John"
+
+```bash
+replace_strings.py "(\w+) (\w+)" "\2, \1" mytext.txt
+```
 
 ## Installation
 
